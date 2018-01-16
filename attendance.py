@@ -33,8 +33,12 @@ def main():
 
     while(True):
         #parse penn key and create request
-        readline = sys.stdin.readline()
-         
+        try :
+		readline = sys.stdin.readline()
+        except KeyboardInterrupt:
+		print '\nDone'
+		sys.exit(0)
+
         if(readline.startswith('exit')):
             sys.exit(0)
         #remove personal information from screen so next student can not read
@@ -73,7 +77,7 @@ def main():
             print (colors.GREEN + 'Attendance successfully recorded for: ' +
                 name + colors.ENDC)
         else:
-            print (colors.RED + 'Error recording attendance for: ' + name +
+            print (colors.RED + 'Fuck you, ' + name +
                     colors. ENDC + ' work state: ' + r['workflow_state'])
 
 
